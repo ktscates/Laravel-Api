@@ -55,6 +55,9 @@ class LoanController extends Controller
                 'success' => false,
                 'message' => 'Sorry, loan could not be added'
             ], 500);
+
+        return view('home');
+
     }
 
     public function update(Request $request, $id)

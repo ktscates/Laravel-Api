@@ -78,7 +78,7 @@ class UserController extends Controller
  
         $user = JWTAuth::authenticate($request->token);
  
-        return response()->jsonResponse([
+        return response()->json([
             'success' => true,
             'user' => $user,
         ]);
