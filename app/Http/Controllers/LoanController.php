@@ -36,6 +36,7 @@ class LoanController extends Controller
 
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'description' => 'required',
             'amount' => 'required|integer',
@@ -56,7 +57,7 @@ class LoanController extends Controller
                 'message' => 'Sorry, loan could not be added'
             ], 500);
 
-        return view('home');
+        // return view('home');
 
     }
 

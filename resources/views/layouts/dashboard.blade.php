@@ -263,29 +263,12 @@
 <script src="{{asset('dist/js/demo.js')}}"></script>
 
 <script>
-
-  $("#submit").click(function(event){
-      event.preventDefault();
-
-      let description = $("input[name=description]").val();
-      let amount = $("input[name=amount]").val();
-      let _token   = $('meta[name="csrf-token"]').attr('content');
-
-      $.ajax({
-        url: "/api/loans",
-        type:'POST',
-        data:{
-          description:description,
-          amount:amount,
-          _token: _token
-        },
-        success:function(response){
-          console.log(response);
-          if(response) {
-            alert("button clicked")
-          }
-        },
-      });
+  $(document).ready(function(){
+    $("#submit").click(function(){
+      $.post("/api/loans", function(data){
+        alert("Button clicked!!")
+      })
+    });
   });
 </script>
 </body>
